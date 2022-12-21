@@ -1,0 +1,152 @@
+pkill -9 -u goodlife     Kill a user
+
+
+￼Permission command
+==================
+￼find . -type d -exec chmod 0755 {} \;
+find . -type f -exec chmod 0644 {} \;
+
+phpinfo
+=======
+
+echo "<?php phpinfo(); ?>" > info.php && chown $(pwd | cut -d '/' -f3). info.php
+
+
+Space command 
+==============
+￼find /home -type f \( -name "*err*" -o -name "*log*" -o -name "*bak*" \) -size +100M -exec du -h {} \;
+
+find /home -type f -name error -size +100M -exec du -h {} \;
+
+find /home -type f \( -name "*.gz" -o -name "*.tar" -o -name "*.zip" \) -size +100M -exec du -h {} \;
+
+find /home/ -name error_log -type f -print -exec truncate --size 0 "{}" \;
+
+
+
+
+Ip attack
+==========
+netstat -ntu|awk '{print $5}'|cut -d: -f1 -s|sort|uniq -c|sort -nk1 -r |  head -10
+
+zombie
+======
+ps axo ppid,stat | grep Z | awk '{print $1}' | xargs kill -HUP
+
+
+clear tmp
+========
+/usr/sbin/tmpwatch --mtime --all 24 /tmp
+
+/scripts/suspendacct ferosons "due to high load"
+
+URL masking
+===========
+<html>
+<head>
+    <title>asyfiltre</title>
+    <meta name="description" content="Description">
+    <meta name="keywords" content="Keyword1, Keyword2">
+    <meta name="keywords" content="Keyword1, Keyword2">
+</head>
+<frameset rows="100%,0" border="0"> <frame src="https://www.ozasyafiltre.com/" frameborder="0"> <frame frameborder="0"> </frameset>
+</html>
+
+permit root login
+==================
+replace "PermitRootLogin no" "PermitRootLogin yes" -- /etc/ssh/sshd_config ; replace "PasswordAuthentication no" "PasswordAuthentication yes" -- /etc/ssh/sshd_config ; service sshd restart;
+
+replace "PermitRootLogin yes" "PermitRootLogin no" -- /etc/ssh/sshd_config ; replace "PasswordAuthentication yes" "PasswordAuthentication no" -- /etc/ssh/sshd_config ; service sshd restart;
+
+vss834 perm issue
+================
+CD %plesk_bin% 
+websrvmng.exe --remove-vhost --vhost-name=abedian.usf
+
+websrvmng.exe --install-vhost --vhost-name=abedian.us
+
+/scripts/dnscluster synczone domain.com
+
+tmp clear in biliver.com 
+
+find . -name "sess_*" -print0 | xargs -0 rm
+
+
+perl malware
+============
+grep '*'  /var/spool/cron/*  | grep -v root | egrep "/var/tmp/|base64" | wc -l
+grep '*'  /var/spool/cron/*  | grep -v root | egrep "/var/tmp/|base64" | cut -d/ -f5 | cut -d: -f1 | uniq
+
+
+Wp broker admin
+================
+define( 'CONCATENATE_SCRIPTS', false );
+
+Spam identifier exim
+---------------------
+exim -bpr|grep "<"|awk {'print $4'}|cut -d"<" -f2|cut -d">" -f1|sort -n|uniq -c|sort -n
+
+<files xmlrpc.php>
+order allow,deny
+deny from all
+</files>
+
+<files wp-cron.php>
+order allow,deny
+deny from all
+</files>
+
+Cyberpanel installation.
+===========================
+https://platform.cyberpersons.com/servers/connectServersRaw
+
+techtolga@gmail.com
+password: 3FcXXLiBnw92k5
+
+
+834 issue:
+fsutil resource setautoreset true c:\
+
+
+Growpart
+=========
+https://partners-intl.aliyun.com/help/en/elastic-compute-service/latest/resize-partitions-and-file-systems-of-linux-system-disks
+
+
+echo "$(tail -3 file.txt)" > file.txt
+
+
+Domain
+=======
+
+https://www.hostinger.com/tutorials/vps/how-to-create-apache-vhost-centos7
+
+rds connection to wp
+=====================
+https://aws.amazon.com/getting-started/hands-on/deploy-wordpress-with-amazon-rds/module-three/
+
+cpanell spamming
+===========
+https://github.com/CpanelInc/tech-MSP
+
+
+cs failure
+=========
+
+https://virtuozzosupport.force.com/s/article/000013678
+https://docs.virtuozzo.com/virtuozzo_storage_administrators_command_line_guide/configuring-virtuozzo-storage-clusters/configuring-chunk-servers.html
+
+
+jetbackup fix
+=============
+/usr/local/jetapps/usr/bin/mongod --quiet -f /usr/local/jetapps/etc/mongod.conf
+
+
+zero SSl issue
+=============
+wget -O - https://get.acme.sh | sh
+
+acme.sh --issue --standalone -d  domain
+￼
+￼
+
